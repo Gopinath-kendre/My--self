@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Portfolio</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    function Portfolio() {
+      const mySkills = ['JavaScript', 'React', 'Next.js', 'CSS', 'HTML'];
+
+      const box = {
+        maxWidth: '700px',
+        margin: '30px auto',
+        padding: '0 20px',
+        fontFamily: 'Arial, sans-serif',
+        color: '#333',
+      };
+
+      const head = {
+        borderBottom: '2px solid blue',
+        paddingBottom: '15px',
+        marginBottom: '25px',
+        display: 'flex',
+        alignItems: 'center',
+      };
+
+      const photo = {
+        width: '75px',
+        height: '75px',
+        borderRadius: '50%',
+        marginRight: '15px'
+      };
+
+      const nameStyle = {
+        fontSize: '28px',
+        color: 'blue',
+        margin: '0',
+      };
+
+      const subtitleStyle = {
+        fontSize: '16px',
+        color: 'gray',
+        marginTop: '5px',
+      };
+
+      const sectionStyle = {
+        marginBottom: '25px',
+      };
+
+      return (
+        <div style={box}>
+          <div style={head}>
+            <img src="icon-5359553_640.png" alt="My Photo" style={photo} />
+            <div>
+              <h1 style={nameStyle}>Gopinath Kendre</h1>
+              <p style={subtitleStyle}>Full Stack Developer & Designer</p>
+            </div>
+          </div>
+
+          <div style={sectionStyle}>
+            <h2>About Me</h2>
+            <p>
+              Hello! I like building websites using React and Next.js. I enjoy coding and learning new technologies.
+            </p>
+          </div>
+
+          <div style={sectionStyle}>
+            <h2>Skills</h2>
+            <ul>
+              {mySkills.map(skill => <li key={skill}>{skill}</li>)}
+            </ul>
+          </div>
+
+          <div style={sectionStyle}>
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:gopinathkendre966@gmail.com">gopinathkendre966@gmail.com</a></p>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Portfolio />);
+  </script>
+</body>
+</html>
